@@ -16,4 +16,6 @@ To run follow these command:
  3. bash run_script.sh sysbench sysbench --test=memory --memory-total-size=1G run
  4. iperf3 -s 127.0.0.1 -f K 
     bash run_script.sh iperf3 -c 127.0.0.1 -f K
+    
+ IOCTL implementation is included in the run_script.
  
