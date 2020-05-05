@@ -14,4 +14,3 @@
   sudo rmmod k_probe 
   # Look at the last 50 lines of the console print
   dmesg | tail -50
-  # dmesg

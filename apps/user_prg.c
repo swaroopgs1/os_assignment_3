@@ -7,9 +7,9 @@
 #include <errno.h>
 #include<sys/ioctl.h>
 
-#define RD_VALUE _IOR('a','b', char)
+#define RD_VALUE _IOR('a','b', char*)
 
-static char buffer[10000];
+static char buffer[50000];
 
 int main() {
    

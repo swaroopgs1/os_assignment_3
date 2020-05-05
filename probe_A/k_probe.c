@@ -19,7 +19,7 @@
 
 static int pid=10;
 static int buffer_length = 0;
-static char buffer[10000] = {0};
+static char buffer[50000] = {0};
 module_param(pid,int,0660);
 
 #define DEVICE_NAME "k_probe"
@@ -29,8 +29,6 @@ static long etx_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
          switch(cmd) {
   		 case RD_VALUE:
-			printk(KERN_ALERT "here");
-			printk(KERN_ALERT "%s", buffer);
                         copy_to_user((char*)arg, buffer, buffer_length);
 			break;
 
@@ -79,7 +77,7 @@ static int entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 	if(current->pid == pid) {
 		//printk(KERN_ALERT "PID: %d -> page fault at virtual address :%lu\n", current->pid, vmarea_address);
 		printk(KERN_ALERT "PID:%d " "%lu : %ld\n", current->pid, vmarea_address, current_time.tv_nsec);
-		if(buffer_length < 9500) {
+		if(buffer_length < 45000) {
 			sprintf(buffer + strlen(buffer), "%ld %lu\n", current_time.tv_nsec, vmarea_address);
 			buffer_length = strlen(buffer);
 		}
