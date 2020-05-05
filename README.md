@@ -17,5 +17,5 @@ To run follow these command:
  4. iperf3 -s 127.0.0.1 -f K 
     bash run_script.sh iperf3 -c 127.0.0.1 -f K
     
- IOCTL implementation is included in the run_script.
+ ioctl() implementation is included in the run_script.
  
