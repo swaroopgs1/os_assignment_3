@@ -1,0 +1,1 @@
+cmd_/home/sgowdra1/probes/probe_A/k_probe.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/sgowdra1/probes/probe_A/k_probe.ko /home/sgowdra1/probes/probe_A/k_probe.o /home/sgowdra1/probes/probe_A/k_probe.mod.o ;  true
